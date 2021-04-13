@@ -1,29 +1,22 @@
-let mix = require('laravel-mix').mix;
-const WebpackShellPlugin = require('webpack-shell-plugin');
+const mix = require('laravel-mix');
 const themeInfo = require('./theme.json');
 
-/**
- * Compile less
+/*
+ |--------------------------------------------------------------------------
+ | Mix Asset Management
+ |--------------------------------------------------------------------------
+ |
+ | Mix provides a clean, fluent API for defining some Webpack build steps
+ | for your Laravel applications. By default, we are compiling the CSS
+ | file for the application as well as bundling up all the JS files.
+ |
  */
-mix.less('resources/less/main.less', 'assets/css/main.css')
 
-/**
- * Concat scripts
- */
-mix.scripts([
-  'node_modules/jquery/dist/jquery.js',
-  'node_modules/bootstrap/dist/js/bootstrap.min.js',
-  'node_modules/prismjs/prism.js',
-  'resources/js/bootswatch.js'
-], 'assets/js/all.js');
+mix.sass('resources/sass/styles.scss', 'assets/css').options({
+  processCssUrls: false
+});
 
-/**
- * Copy Font directory https://laravel.com/docs/5.4/mix#url-processing
- */
-mix.copy(
-  'fonts',
-  '../../public/fonts'
-);
+mix.js('resources/js/app.js', 'assets/js');
 
 /**
  * Publishing the assets

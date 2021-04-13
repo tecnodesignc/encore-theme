@@ -7,13 +7,10 @@
     @show
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@section('title')@setting('core::site-name')@show</title>
-    @foreach($alternate as $alternateLocale=>$alternateSlug)
-        <link rel="alternate" hreflang="{{$alternateLocale}}" href="{{url($alternateLocale.'/'.$alternateSlug)}}">
-    @endforeach
-    <link rel="canonical" href="{{url()->current()}}" />
+    <link rel="canonical" href="{{canonical_url()}}"/>
     <link rel="shortcut icon" href="{{ Theme::url('favicon.ico') }}">
 
-    {!! Theme::style('css/main.css') !!}
+    {!! Theme::style('css/main.css'.config('app.version')) !!}
     @stack('css-stack')
 </head>
 <body>
@@ -21,14 +18,17 @@
 @auth
     @include('partials.admin-bar')
 @endauth
-@include('partials.navigation')
+@include('partials.header')
 
 <div class="container">
     @yield('content')
 </div>
 @include('partials.footer')
 
-{!! Theme::script('js/all.js') !!}
+{!! Theme::style('css/stiles.css?v='.config('app.version')) !!}
+{!! Theme::script('js/all.js?v='.config('app.version')) !!}
+{!! Theme::script('js/secondary.js?v='.config('app.version')) !!}
+
 @yield('scripts')
 
 <?php if (Setting::has('core::analytics-script')): ?>
