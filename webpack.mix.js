@@ -1,29 +1,26 @@
 const mix = require('laravel-mix');
 const WebpackShellPlugin = require('webpack-shell-plugin');
 const themeInfo = require('./theme.json');
-
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
  |--------------------------------------------------------------------------
  |
  | Mix provides a clean, fluent API for defining some Webpack build steps
- | for your Laravel applications. By default, we are compiling the CSS
+ | for your Laravel application. By default, we are compiling the Sass
  | file for the application as well as bundling up all the JS files.
  |
  */
-
-mix.sass('resources/sass/styles.scss', 'assets/css').options({
-  processCssUrls: false
+mix.options({
+    processCssUrls: false
 });
+mix.copy('resources/fonts', 'assets/fonts');
+mix.copy('resources/css', 'assets/css');
+mix.copy('resources/images', 'assets/images');
+mix.copy('resources/js', 'assets/js');
+mix.copy('resources/favicon.ico', 'assets/favicon.ico');
 
-mix.js('resources/js/app.js', 'assets/js');
 
-/**
- * Publishing the assets
- */
-mix.webpackConfig({
-  plugins: [
-    new WebpackShellPlugin({onBuildEnd:['php ../../artisan stylist:publish ' + themeInfo.name]})
-  ]
-});
+mix.sass('resources/scss/style.scss', 'assets/css');
+
+mix.copy('assets','../../../public_html/themes/'+ themeInfo.name);

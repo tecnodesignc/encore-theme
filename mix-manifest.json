@@ -1,5 +1,24 @@
 {
-  "/mix.js": "/mix.js",
-  "/assets/css/main.css": "/assets/css/main.css",
-  "assets/js/all.js": "assets/js/all.js"
+    "/assets/css/style.css": "/assets/css/style.css",
+    "/assets/fonts/materialdesignicons-webfont.eot": "/assets/fonts/materialdesignicons-webfont.eot",
+    "/assets/fonts/materialdesignicons-webfont.svg": "/assets/fonts/materialdesignicons-webfont.svg",
+    "/assets/fonts/materialdesignicons-webfont.ttf": "/assets/fonts/materialdesignicons-webfont.ttf",
+    "/assets/fonts/materialdesignicons-webfont.woff": "/assets/fonts/materialdesignicons-webfont.woff",
+    "/assets/fonts/materialdesignicons-webfont.woff2": "/assets/fonts/materialdesignicons-webfont.woff2",
+    "/assets/css/bootstrap.min.css": "/assets/css/bootstrap.min.css",
+    "/assets/css/materialdesignicons.min.css": "/assets/css/materialdesignicons.min.css",
+    "/assets/images/bg-1.png": "/assets/images/bg-1.png",
+    "/assets/images/img-1.png": "/assets/images/img-1.png",
+    "/assets/images/logo-dark.png": "/assets/images/logo-dark.png",
+    "/assets/images/logo-light.png": "/assets/images/logo-light.png",
+    "/assets/images/overlay-5.png": "/assets/images/overlay-5.png",
+    "/assets/js/app.js": "/assets/js/app.js",
+    "/assets/js/bootstrap.bundle.min.js": "/assets/js/bootstrap.bundle.min.js",
+    "/assets/js/gumshoe.polyfills.min.js": "/assets/js/gumshoe.polyfills.min.js",
+    "/assets/js/particles.app.js": "/assets/js/particles.app.js",
+    "/assets/js/particles.js": "/assets/js/particles.js",
+    "/assets/js/smooth-scroll.polyfills.min.js": "/assets/js/smooth-scroll.polyfills.min.js",
+    "/assets/js/unicons.js": "/assets/js/unicons.js",
+    "/assets/favicon.ico": "/assets/favicon.ico",
+    "/public_html/themes/Encore/favicon.ico": "/public_html/themes/Encore/favicon.ico"
 }
